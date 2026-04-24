@@ -1,3 +1,4 @@
+// tabs
 function openTab(evt, tabName) {
 	var tabIndex, tabContent, tabLinks;
 
@@ -20,3 +21,22 @@ function openTab(evt, tabName) {
 	document.getElementById(tabName).style.display = "block";
 	evt.currentTarget.className += " active";
 }
+
+// cookies
+document.addEventListener("DOMContentLoaded", function () {
+	if (!localStorage.getItem("cookiesAccepted")) {
+		document.getElementById("popup").style.display = "block";
+
+		document
+			.querySelector(".close-button")
+			.addEventListener("click", function () {
+				document.getElementById("popup").style.display = "none";
+			});
+
+		document
+			.querySelector(".close-button")
+			.addEventListener("click", function () {
+				localStorage.setItem("cookiesAccepted", true);
+			});
+	}
+});
