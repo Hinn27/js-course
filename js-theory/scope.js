@@ -1,16 +1,19 @@
 // scope quyết định khả năng truy cập của biến
 // global scope: ở đâu cũng được
 const globalVar = "đâu cũng được";
-function global(globalVar) {
+function global() {
   console.log(globalVar);
 }
 
+global();
+
 // function scope: truy cập trong hàm
-function funcVar() {
+function func() {
   var funcVar = "khởi tạo ở đâu dùng ở đó";
   console.log(funcVar);
 }
-console.log(funcVar); // nhốt k ra được
+// console.log(funcVar); // nhốt k ra được
+func();
 
 // block scope: let và const bị nhốt trong nhà tù hình { } (như if, for, while)
 {
@@ -23,8 +26,8 @@ console.log(funcVar); // nhốt k ra được
   console.log(blockVar);
 }
 
-console.log(blockLet);
-console.log(blockConst);
+// console.log(blockLet);
+// console.log(blockConst);
 console.log(blockVar);
 
 // lexical scope: định nghĩa toàn cục thì khi được gọi sẽ lấy giá tri toàn cục chứ không phải nơi hàm được gọi
